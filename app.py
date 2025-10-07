@@ -126,7 +126,7 @@ if audio is not None and audio['bytes']:
             st.write(user_text)
 
         with st.spinner("AI is thinking..."):
-            model = genai.GenerativeModel('gemini-1.0-pro')
+            model = genai.GenerativeModel('gemini-1.5-flash')
             chat = model.start_chat(history=st.session_state.messages)
             response = chat.send_message(user_text)
             ai_response_text = response.text
